@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TipoReclamos extends Migration
+class CreateTipoPagosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class TipoReclamos extends Migration
      */
     public function up()
     {
-        Schema::create('Tipo_reclamo', function (Blueprint $table) {
-            
-            $table->increments('idTiposReclamos');
-            $table->string('NombreReclamo',45);
-            });
+        Schema::create('tipo_pagos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('NombreTipoPago',45);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -27,7 +27,6 @@ class TipoReclamos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Tipo_reclamo');
-
+        Schema::dropIfExists('tipo_pagos');
     }
 }
